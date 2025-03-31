@@ -83,3 +83,9 @@ body
     grid-row-start: 2;
 }
 */
+
+/*  Footer  */
+.main-footer
+{
+    background: orange;
+}

@@ -1,0 +1,32 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/*  Górny pasek na stronie  */
+.main-header
+{
+    background: red;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav
+{
+    flex: 1;
+}
+
