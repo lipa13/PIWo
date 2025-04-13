@@ -34,9 +34,11 @@
   <div class="overlay hidden"></div>
 
   <div class="modal delete-modal hidden">
-    <p class="modal-text">Are you sure you want to delete the task: ...?</p>
-    <button class="btn confirm-btn">Yes</button>
-    <button class="btn cancel-btn">No</button>
+    <div class="delete-modal-content">
+      <p class="modal-text">Are you sure you want to delete the task: ...?</p>
+      <button class="btn confirm-btn">Yes</button>
+      <button class="btn cancel-btn">No</button>
+    </div>
   </div>
 
   <div class="modal add-list-modal hidden">
@@ -54,40 +56,42 @@
         <span class="toggle-list">▼</span> <!-- ▲ -->
       </header>
 
-      <div class="list-not-toggled">
-        <form class="add-task-form">
-          <input class="task-title" type="text" placeholder="Task title...">
-          <button class="btn add-task">Add</button>
-        </form>
+      <div class="list-not-toggled-container hidden">
+        <div class="list-not-toggled">
+          <form class="add-task-form">
+            <input class="task-title" type="text" placeholder="Task title...">
+            <button class="btn add-task-btn">Add</button>
+          </form>
 
-        <section class="tasks-section">
+          <section class="tasks-section">
 
-          <table class="task-list">
-            <thead class="task-list-header">
-            <tr class="list-header-row">
-              <th class="list-header-task">Task</th>
-              <th class="list-header-status">Status</th>
-            </tr>
-            </thead>
+            <table class="task-list">
+              <thead class="task-list-header">
+              <tr class="list-header-row">
+                <th class="list-header-task">Task</th>
+                <th class="list-header-status">Status</th>
+              </tr>
+              </thead>
 
-            <tbody id="task-list-body">
-            <!--  template do wiersza listy na dole "task-row-template"  -->
-            </tbody>
+              <tbody class="task-list-body">
+              <!--  template do wiersza listy na dole "task-row-template"  -->
+              </tbody>
 
-          </table>
-        </section>
+            </table>
+          </section>
+        </div>
       </div>
-
     </div>
   </template>
 
   <template class="task-row-template">
     <tr class="list-body-row">
       <td class="list-body-task">
-        <button class="task">Task 1</button>
+        <button class="task-btn">Task 1</button>
       </td>
       <td class="list-body-status">
-        <label class="done-label">Done<input type="checkbox"></label>
+        <label class="done-label">Done<input class="task-checkbox" type="checkbox"></label>
+        <div class="done-date hidden"></div>
         <div class="delete-btn-container">
           <button class="delete-task">❌</button>
         </div>
