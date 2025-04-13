@@ -188,18 +188,24 @@ confirmBtn.addEventListener("click", (e) =>
             headerButtons.appendChild(separator);
         }
 
-        // 2. Dodanie przycisku z nazwą listy
-        const newListBtn = document.createElement("button");
+        // 2. Utworzenie ID listy
+        const listId = `list-${listName.toLowerCase().replace(/\s+/g, "-")}`;
+
+        // 3. Dodanie przycisku jako hiperlink do listy
+        const newListBtn = document.createElement("a");
         newListBtn.classList.add("btn", "list-btn");
+        newListBtn.href = `#${listId}`;
         newListBtn.textContent = listName;
         headerButtons.appendChild(newListBtn);
 
-        // 3. Skopiowanie template i dodanie do main-content
+        // 4. Skopiowanie template i dodanie do main-content
         const listClone = listTemplate.content.cloneNode(true);
-        listClone.querySelector(".list-title").textContent = listName;
+        const container = listClone.querySelector(".list-container");
+        container.id = listId;
+        container.querySelector(".list-title").textContent = listName;
         mainContent.appendChild(listClone);
 
-        // 4. Zamknij modal i overlay
+        // 5. Zamknięcie okienka
         overlay.classList.add("hidden");
         modals.forEach(modal => modal.classList.add("hidden"));
     }

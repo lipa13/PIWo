@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+html
+{
+    scroll-behavior: smooth;
+}
+
 .hidden
 {
     display: none;
@@ -25,6 +30,17 @@ main
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.list-btn
+{
+    text-decoration: none;
+    background-color: #d0bfff;
+    color: inherit;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
 }
 
 /*  Górny pasek na stronie  */
