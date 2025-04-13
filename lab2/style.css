@@ -1,0 +1,214 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hidden
+{
+    display: none;
+}
+
+body
+{
+    color: #343a40;
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/*  Górny pasek na stronie  */
+.main-header
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header-title
+{
+    background-color: #99e9f2;
+    padding: 10px 20px;
+}
+
+.header-buttons
+{
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    height: 25px;
+}
+
+.v-separator {
+    width: 1px;
+    height: 25px;
+    background-color: #adb5bd;
+    margin-left: 8px;
+    margin-right: 12px;
+}
+
+/* Lista */
+
+.main-content
+{
+    background-color: #e3fafc;
+    justify-items: center;
+}
+
+.list-container
+{
+    width: 70%;
+    display: grid;
+    row-gap: 10px;
+    padding: 10px 0;
+}
+
+.list-header
+{
+    display: flex;
+    border-bottom: 1px solid #868e96;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.toggle-list
+{
+    margin-left: auto;
+    color: #adb5bd;
+}
+
+.add-task-form
+{
+    display: flex;
+    gap: 5px;
+}
+
+.task-title
+{
+    width: 200px;
+}
+
+table, th, td
+{
+    border: 2px solid #343a40;
+    border-collapse: collapse;
+}
+
+.task-list
+{
+    width: 100%;
+    table-layout: fixed;
+    position: relative;
+
+}
+
+th, td
+{
+    margin-top: 2px;
+}
+
+.list-header-task
+{
+    width: 90%;
+}
+
+.done-label
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.list-body-status
+{
+    position: relative;
+}
+
+.delete-btn-container
+{
+    position: absolute;
+    right: -30px;
+    top: -1px;
+    transform: scale(0.8);
+}
+
+.list-body-task
+{
+    display: flex;
+    border: none;
+}
+
+.task
+{
+    flex: 1;
+    background-color: #e3fafc;
+    border: none;
+    text-align: left;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.task:hover
+{
+    background-color: #f1f3f5;
+}
+
+/*  Inne  */
+
+.btn
+{
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 20px;
+}
+
+.overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #343a40;
+
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.add-list-form
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 8px;
+}
+
+.new-list-title
+{
+    grid-column: 1/-1;
+    border: 1px solid #868e96;
+}

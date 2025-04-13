@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>lab2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="main-header">
+      <h1 class="header-title">ToDoList!</h1>
+      <nav class="header-buttons">
+        <button class="btn new-list-btn">New List</button>
+
+        <!--<div class="v-separator"></div>-->
+        <!--  separator doda się po utworzeniu listy  -->
+        <!--  tak samo buttony z listami i ich nazwami  -->
+
+      </nav>
+    </header>
+
+    <main class="main-content">
+
+    </main>
+
+    <footer>
+
+    </footer>
+  </div>
+
+  <div class="overlay hidden"></div>
+
+  <div class="modal delete-modal hidden">
+    <p class="modal-text">Are you sure you want to delete the task: ...?</p>
+    <button class="btn confirm-btn">Yes</button>
+    <button class="btn cancel-btn">No</button>
+  </div>
+
+  <div class="modal add-list-modal hidden">
+    <form class="add-list-form">
+      <input class="new-list-title" type="text" placeholder="List Title...">
+      <button class="btn confirm-btn">Create</button>
+      <button class="btn cancel-btn">Cancel</button>
+    </form>
+  </div>
+
+  <template class="list-template">
+    <div class="list-container">
+      <header class="list-header">
+        <h2 class="list-title">List1</h2>
+        <span class="toggle-list">▼</span> <!-- ▲ -->
+      </header>
+
+      <div class="list-not-toggled">
+        <form class="add-task-form">
+          <input class="task-title" type="text" placeholder="Task title...">
+          <button class="btn add-task">Add</button>
+        </form>
+
+        <section class="tasks-section">
+
+          <table class="task-list">
+            <thead class="task-list-header">
+            <tr class="list-header-row">
+              <th class="list-header-task">Task</th>
+              <th class="list-header-status">Status</th>
+            </tr>
+            </thead>
+
+            <tbody id="task-list-body">
+            <!--  template do wiersza listy na dole "task-row-template"  -->
+            </tbody>
+
+          </table>
+        </section>
+      </div>
+
+    </div>
+  </template>
+
+  <template class="task-row-template">
+    <tr class="list-body-row">
+      <td class="list-body-task">
+        <button class="task">Task 1</button>
+      </td>
+      <td class="list-body-status">
+        <label class="done-label">Done<input type="checkbox"></label>
+        <div class="delete-btn-container">
+          <button class="delete-task">❌</button>
+        </div>
+      </td>
+    </tr>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
