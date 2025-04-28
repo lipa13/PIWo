@@ -1,3 +1,8 @@
+import "../styles/homeStyle.css";
+import HeroSection from "../components/homeComponents/HeroSection";
+import CategoriesNav from "../components/homeComponents/CategoriesNav";
+import NewAndNoticeable from "../components/homeComponents/NewAndNoticeable";
+
 export function meta() {
   return [
     { title: "Bookzaar" },
@@ -7,8 +12,10 @@ export function meta() {
 
 export default function Home() {
   return (
-      <main className="list-vertical">
-          <h1></h1>
+      <main className="main-content">
+          <HeroSection />
+          <CategoriesNav />
+          <NewAndNoticeable />
       </main>
   );
 }

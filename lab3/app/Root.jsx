@@ -8,7 +8,8 @@ import {
 } from "react-router";
 
 import stylesheet from "./styles/global.css?url";
-import NavBar from "./Components/NavBar";
+import NavBar from "./Components/globalComponents/NavBar";
+import Footer from "./Components/globalComponents/Footer";
 
 export const links = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,11 +35,12 @@ export function Layout({ children }) {
         <Links />
       </head>
       <body>
-        <NavBar /> {/* globalny NavBar */}
         <div className="container">
+          <NavBar /> {/* globalny NavBar */}
           {children}
           <ScrollRestoration />
           <Scripts />
+          <Footer />
         </div>
       </body>
     </html>
