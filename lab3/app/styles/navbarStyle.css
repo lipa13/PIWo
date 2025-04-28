@@ -1,0 +1,11 @@
+.main-header
+{
+    background: red;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav
+{
+    flex: 1;
+}
