@@ -8,5 +8,5 @@ export default function CategoriesNav() {
             <button className="btn categories-btn-horror">Horror</button>
             <button className="btn categories-btn-thriller">Thriller</button>
         </nav>
-    )
+    );
 }

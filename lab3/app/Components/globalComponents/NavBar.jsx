@@ -10,7 +10,7 @@ export default function NavBar() {
                 <NavLink to="/">
                     <button className="btn home">Home</button>
                 </NavLink>
-                <NavLink to="/shop-all">
+                <NavLink to="/shop">
                     <button className="btn shop-all">Shop All</button>
                 </NavLink>
                 <NavLink to="/sell">

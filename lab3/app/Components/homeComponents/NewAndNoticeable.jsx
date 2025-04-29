@@ -6,5 +6,5 @@ export default function NewAndNoticeable() {
             <button className="btn new-noticeable-right">Right</button>
             <div className="new-noticeable-content"></div>
         </section>
-    )
+    );
 }

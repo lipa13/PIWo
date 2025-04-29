@@ -1,3 +1,5 @@
+import img from '../../../assets/hero-section-img.jpg';
+
 export default function HeroSection() {
     return (
         <section className="hero-section">
@@ -13,7 +15,7 @@ export default function HeroSection() {
                 <button className="btn hero-section-shop">Shop products</button>
                 <button className="btn hero-section-add">Sell product</button>
             </div>
-            <div className="hero-image"></div>
+            <img className="hero-img" src={img} alt="Hero section image"/>
         </section>
     );
 }

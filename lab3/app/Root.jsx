@@ -37,9 +37,11 @@ export function Layout({ children }) {
       <body>
         <div className="container">
           <NavBar /> {/* globalny NavBar */}
-          {children}
-          <ScrollRestoration />
-          <Scripts />
+          <div className="content-container">
+            {children}
+            <ScrollRestoration />
+            <Scripts />
+          </div>
           <Footer />
         </div>
       </body>
