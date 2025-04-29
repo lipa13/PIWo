@@ -1,11 +1,73 @@
 .main-header
 {
-    background: red;
+    background: inherit;
     display: flex;
     align-items: center;
+    gap: 15px;
+    padding: 5px 20px;
+    border-bottom: #e9ecef 2px solid;
+}
+
+.search
+{
+    width: 200px;
+    padding: 1px 5px;
+    font-size: 14px;
+    color: #212529;
 }
 
 .main-nav
 {
     flex: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn-left
+{
+    font-size: 15px;
+    text-decoration: none;
+    color: #868e96;
+}
+
+.user-controls
+{
+    display: flex;
+    gap: 10px;
+}
+
+.user-controls button
+{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bookstore-label
+{
+    font-family: "Playfair Display", serif;
+    font-weight: 1000;
+    font-size: 28px;
+}
+
+.account-icon
+{
+    width: 18px;
+    color: inherit;
+}
+
+.cart-icon
+{
+    width: 20px;
+    color: inherit;
+}
+
+.nav-hover:hover
+{
+    color: #328E6E;
+}
+
+.nav-hover:active
+{
+    color: #5ba58b;
 }
