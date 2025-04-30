@@ -5,7 +5,7 @@ import DownIcon from "../../../assets/chevron-down-outline.svg?react";
 export default function Filters()
 {
     return (
-        <div className="filters-container hidden">
+        <div className="filters-container">
             <div className="filters">
                 <button className="filter-btn">
                     Author

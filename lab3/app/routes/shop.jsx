@@ -2,6 +2,7 @@ import "../styles/shopStyle.css";
 import UpIcon from "../../assets/chevron-up-outline.svg?react";
 import DownIcon from "../../assets/chevron-down-outline.svg?react";
 import Filters from "../components/shopComponents/Filters";
+import BookCard from "../Components/shopComponents/BookCard";
 
 export default function Shop(){
     return (
@@ -16,7 +17,12 @@ export default function Shop(){
             </div>
             <Filters />
             <div className="shop-books">
-                Tutaj pozycje ze sklepu
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
+                <BookCard />
             </div>
         </main>
     );

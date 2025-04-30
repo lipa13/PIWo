@@ -82,3 +82,21 @@
     border: #f1f3f5 1px solid;
     box-shadow: 5px 4px 6px #ced4da;
 }
+
+.shop-books
+{
+    margin-top: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-self: center;
+    width: 80%;
+}
+
+.bookcard
+{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    background: green;
+}
