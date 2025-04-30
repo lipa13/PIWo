@@ -3,8 +3,8 @@
     background: inherit;
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 5px 20px;
+    gap: 20px;
+    padding: 6px 20px;
     border-bottom: #e9ecef 2px solid;
 }
 
@@ -20,7 +20,7 @@
 {
     flex: 1;
     display: flex;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
 }
 

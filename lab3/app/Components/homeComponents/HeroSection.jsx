@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import RightIcon from "../../../assets/arrow-forward-outline.svg?react";
 import img from '../../../assets/hero-section-img.jpg';
 
 export default function HeroSection() {
@@ -14,11 +15,11 @@ export default function HeroSection() {
                     Start selling or browsing today — it’s free and simple.
                 </p>
                 <div className="hero-section-buttons">
-                    <NavLink to="/shop">
-                        <button className="hero-btn hero-section-shop">Shop products</button>
+                    <NavLink className="hero-navlink" to="/shop">
+                        <button className="hero-btn hero-section-shop"><RightIcon className="left-right-icons"/>Shop products</button>
                     </NavLink>
-                    <NavLink to="/sell">
-                        <button className="hero-btn hero-section-add">Sell product</button>
+                    <NavLink className="hero-navlink" to="/sell">
+                        <button className="hero-btn hero-section-add"><RightIcon className="left-right-icons"/>Sell product</button>
                     </NavLink>
                 </div>
             </div>
