@@ -99,4 +99,5 @@
     flex-direction: column;
     height: 200px;
     background: green;
+    border: #f1f3f5 1px solid;
 }
