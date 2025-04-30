@@ -1,22 +1,21 @@
 .main-content
 {
     display: grid;
-    gap: 16px;
+    gap: 24px;
 }
 
 .hero-section
 {
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 4fr 5fr;
+    grid-template-rows: auto;
 }
 
 .hero-img
 {
     height: 100%;
     width: 100%;
-    background-color: green;
     grid-column-start: 2;
     grid-row: 1/-1;
 }
@@ -32,6 +31,89 @@
 {
     height: 100%;
     width: 100%;
-    background-color: blue;
     grid-column: 1/-1;
+}
+
+.hero-left-side
+{
+    height: 100%;
+    background-color: #287258;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    padding: 30px;
+    color: #edf5d7;
+}
+
+.hero-section-title
+{
+    grid-column: 1/-1;
+    font-family: "Playfair Display", serif;
+}
+
+.hero-section-text
+{
+    grid-column: 1/-1;
+}
+
+.hero-section-buttons
+{
+    display: flex;
+    gap: 16px;
+}
+
+.categories-nav
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.categories
+{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+}
+
+.hero-btn
+{
+    background-color: #edf5d7;
+    color: #287258;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.new-not-btn
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.new-not-btn:hover
+{
+    color: #287258;
+}
+
+.new-not-btn:active
+{
+    color: #5ba58b;
+}
+
+.new-noticeable-left
+{
+    margin-right: 6px;
+}
+
+.left-right-icons
+{
+    width: 18px;
 }

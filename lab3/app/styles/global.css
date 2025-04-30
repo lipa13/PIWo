@@ -15,13 +15,30 @@ body
 {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
 }
 
 .content-container
 {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 92%;
     align-self: center;
+}
+
+.btn
+{
+    background: none;
+    border: #212529 2px solid;
+    padding: 0.5rem 1.25rem;
+    font-weight: bold;
+    border-radius: 16px;
+    color: #212529;
+    cursor: pointer;
+}
+
+h3
+{
+    font-size: 20px;
+    font-weight: 700;
 }
