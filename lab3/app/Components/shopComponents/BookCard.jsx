@@ -6,7 +6,7 @@ export default function BookCard(){
             <div className="bookcard-info">
                 <p className="bookcard-title">Very Interesting Book</p>
                 <p className="bookcard-price">10.99$</p>
-                <button className="btn bookcard-btn"></button>
+                <button className="btn bookcard-btn">BUY!</button>
             </div>
         </div>
     )

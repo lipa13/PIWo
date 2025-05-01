@@ -152,3 +152,25 @@
     font-weight: bold;
     font-size: 20px;
 }
+
+.bookcard-btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    padding: 6px 14px;
+    background: #287258;
+    color: #edf5d7;
+    border-radius: 14px;
+}
+
+.bookcard-btn:hover
+{
+    background-color: #538e79;
+}
+
+.bookcard-btn:active
+{
+    background-color: #7eaa9b;
+}
