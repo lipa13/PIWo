@@ -1,5 +1,11 @@
 .main-footer
 {
+    display: flex;
     padding: 20px;
     height: 100px;
+}
+
+.copyright
+{
+    align-self: flex-end;
 }

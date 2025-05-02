@@ -169,11 +169,13 @@
 .bookcard-btn:hover
 {
     background-color: #538e79;
+    color: #edf5d7;
 }
 
 .bookcard-btn:active
 {
     background-color: #7eaa9b;
+    color: #edf5d7;
 }
 
 .like-btn-container

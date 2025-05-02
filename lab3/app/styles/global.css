@@ -39,12 +39,13 @@ body
 
 .btn:hover
 {
-    background-color: #f1f3f5;
+    color: #287258;
 }
 
 .btn:active
 {
     background-color: #f8f9fa;
+    color: #287258;
 }
 
 h3
