@@ -23,6 +23,8 @@ export default function Shop(){
                 <BookCard />
                 <BookCard />
                 <BookCard />
+                <BookCard />
+                <BookCard />
             </div>
         </main>
     );

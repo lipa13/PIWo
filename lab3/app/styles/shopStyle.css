@@ -88,15 +88,18 @@
     margin-top: 10px;
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(180px, auto));
     align-self: center;
-    width: 80%;
+    width: 85%;
+    justify-items: center;
+    justify-content: center;
 }
 
 .bookcard
 {
     display: flex;
     flex-direction: column;
+    width: 180px;
     height: 250px;
     background: white;
     border: #212529 1px solid;
