@@ -43,12 +43,14 @@
 .filter-btn-container
 {
     flex: 1;
-    max-width: 300px;
+    max-width: 310px;
     position: relative;
 }
 
 .filter-btn
 {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -77,23 +79,57 @@
     width: 13px;
 }
 
-.fliter-list-container
-{
-    pointerEvents: 'auto'
-}
-
 .filter-list
 {
+    list-style: none;
+    overflow-y: auto;
     position: absolute;
     top: 100%;
     z-index: 10;
     left: 50%;
     transform: translateX(-50%);
     width: 98%;
-    height: 200px;
+    max-height: 200px;
     background: white;
     border: #f1f3f5 1px solid;
     box-shadow: 5px 4px 6px #ced4da;
+}
+
+.filter-list-item
+{
+    font-size: 14px;
+    padding: 6px 10px;
+    border-bottom: #f1f3f5 1px solid;
+}
+
+.filter-list-item:last-child
+{
+    font-size: 14px;
+    padding: 6px 10px;
+    border-bottom: none;
+}
+
+.filter-list-item-btn
+{
+    font-size: inherit;
+    font-family: inherit;
+    display: flex;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-list-item-btn input
+{
+    pointer-events: none;
+}
+
+.filter-list-item-label
+{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .shop-books
