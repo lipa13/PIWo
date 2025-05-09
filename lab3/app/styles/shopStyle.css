@@ -40,9 +40,16 @@
     gap: 10px;
 }
 
-.filter-btn
+.filter-btn-container
 {
     flex: 1;
+    max-width: 300px;
+    position: relative;
+}
+
+.filter-btn
+{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +59,6 @@
     border: #f1f3f5 1px solid;
     box-shadow: 5px 4px 6px #ced4da;
     cursor: pointer;
-    position: relative;
 }
 
 .filter-btn:hover
@@ -71,12 +77,19 @@
     width: 13px;
 }
 
+.fliter-list-container
+{
+    pointerEvents: 'auto'
+}
+
 .filter-list
 {
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 98%;
     height: 200px;
     background: white;
     border: #f1f3f5 1px solid;

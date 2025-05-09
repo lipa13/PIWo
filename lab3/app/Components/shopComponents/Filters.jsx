@@ -7,15 +7,29 @@ export default function Filters()
     return (
         <div className="filters-container">
             <div className="filters">
-                <button className="filter-btn">
-                    Author
-                    <DownIcon className="up-down-icon"/>
+                <div className="filter-btn-container">
+                    <button className="filter-btn">
+                        Author
+                        <DownIcon className="up-down-icon"/>
+                    </button>
                     <FilterList />
-                </button>
-                <button className="filter-btn">Price<DownIcon className="up-down-icon"/></button>
-                <button className="filter-btn">Category<DownIcon className="up-down-icon"/></button>
-                <button className="filter-btn">Pages<DownIcon className="up-down-icon"/></button>
-                <button className="filter-btn">Cover<DownIcon className="up-down-icon"/></button>
+                </div>
+
+                <div className="filter-btn-container">
+                    <button className="filter-btn">Price<DownIcon className="up-down-icon"/></button>
+                </div>
+
+                <div className="filter-btn-container">
+                    <button className="filter-btn">Category<DownIcon className="up-down-icon"/></button>
+                </div>
+
+                <div className="filter-btn-container">
+                    <button className="filter-btn">Pages<DownIcon className="up-down-icon"/></button>
+                </div>
+
+                <div className="filter-btn-container">
+                    <button className="filter-btn">Cover<DownIcon className="up-down-icon"/></button>
+                </div>
             </div>
         </div>
     )
