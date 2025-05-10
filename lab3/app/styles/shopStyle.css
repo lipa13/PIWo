@@ -114,13 +114,32 @@
     font-size: inherit;
     font-family: inherit;
     display: flex;
+    gap: 7px;
     width: 100%;
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.filter-list-item-btn input
+.filter-list-item-number
+{
+    font-size: inherit;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: 100%;
+    height: 100%;
+}
+
+.filter-list-item-number-input
+{
+    padding: 1px 4px;
+    flex-shrink: 0;
+    width: 81%;
+}
+
+.filter-list-item-check
 {
     pointer-events: none;
 }

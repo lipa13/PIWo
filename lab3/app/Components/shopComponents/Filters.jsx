@@ -1,4 +1,4 @@
-import FilterList from "./FilterList"
+import FilterList from "./FilterList/FilterList.jsx"
 import UpIcon from "../../../assets/chevron-up-outline.svg?react";
 import DownIcon from "../../../assets/chevron-down-outline.svg?react";
 
