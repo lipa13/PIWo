@@ -11,6 +11,8 @@ import stylesheet from "./styles/global.css?url";
 import NavBar from "./Components/globalComponents/NavBar";
 import Footer from "./Components/globalComponents/Footer";
 
+import { BookOffersContextProvider } from "./contexts/BookOffersContext";
+
 export const links = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -51,7 +53,11 @@ export function Layout({ children }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+      <BookOffersContextProvider>
+        <Outlet />
+      </BookOffersContextProvider>
+  );
 }
 
 export function ErrorBoundary({ error }) {

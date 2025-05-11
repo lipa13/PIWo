@@ -155,12 +155,14 @@
 {
     margin-top: 10px;
     display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(180px, auto));
-    align-self: center;
-    width: 85%;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(180px, max-content));
     justify-content: center;
+    align-self: center;
+    width: 91%;                /* dynamicznie zależne od ekranu */
+    max-width: 1600px;         /* ale ogranicz rozjeżdżanie na ultra szerokich ekranach */
+    justify-items: center;     /* wyśrodkowanie kart w kolumnach */
+    box-sizing: border-box;
+    gap: 15px;
 }
 
 .bookcard
@@ -217,6 +219,11 @@
     font-weight: bold;
     font-size: 12px;
     justify-self: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
 }
 
 .bookcard-price
