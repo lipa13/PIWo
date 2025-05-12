@@ -88,8 +88,8 @@
     z-index: 10;
     left: 50%;
     transform: translateX(-50%);
-    width: 98%;
-    max-height: 200px;
+    width: 96%;
+    max-height: 180px;
     background: white;
     border: #f1f3f5 1px solid;
     box-shadow: 5px 4px 6px #ced4da;
@@ -121,6 +121,20 @@
     cursor: pointer;
 }
 
+.filter-list-item-btn:hover
+{
+    color: #287258;
+}
+
+.filter-list-item-btn:active
+{
+    color: #5ba58b;
+}
+
+.checked {
+    accent-color: #287258;
+}
+
 .filter-list-item-number
 {
     font-size: inherit;
@@ -136,7 +150,7 @@
 {
     padding: 1px 4px;
     flex-shrink: 0;
-    width: 81%;
+    width: 80%;
 }
 
 .filter-list-item-check
@@ -158,9 +172,9 @@
     grid-template-columns: repeat(auto-fit, minmax(180px, max-content));
     justify-content: center;
     align-self: center;
-    width: 91%;                /* dynamicznie zależne od ekranu */
-    max-width: 1600px;         /* ale ogranicz rozjeżdżanie na ultra szerokich ekranach */
-    justify-items: center;     /* wyśrodkowanie kart w kolumnach */
+    width: 91%;
+    max-width: 1600px;
+    justify-items: center;
     box-sizing: border-box;
     gap: 15px;
 }
