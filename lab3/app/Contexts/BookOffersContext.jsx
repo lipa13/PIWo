@@ -13,8 +13,8 @@ export const BookOffersContextProvider = ({ children }) => {
             Pages: 320,
             Cover: "Hardcover",
             Price: 12.99,
-            OfferID: 1,
-            UserID: 101,
+            OfferID: 0,
+            UserID: 0,
             uploadTime: "2025-05-12T01:04:58"
         },
         {
@@ -26,8 +26,8 @@ export const BookOffersContextProvider = ({ children }) => {
             Pages: 423,
             Cover: "Paperback",
             Price: 15.05,
-            OfferID: 2,
-            UserID: 102,
+            OfferID: 1,
+            UserID: 1,
             uploadTime: "2025-05-11T10:00:00"
         },
         {
@@ -39,8 +39,8 @@ export const BookOffersContextProvider = ({ children }) => {
             Pages: 310,
             Cover: "Paperback",
             Price: 13.45,
-            OfferID: 7,
-            UserID: 107,
+            OfferID: 2,
+            UserID: 2,
             uploadTime: "2025-05-10T12:00:00"
         },
         {
@@ -52,8 +52,8 @@ export const BookOffersContextProvider = ({ children }) => {
             Pages: 489,
             Cover: "Paperback",
             Price: 10.99,
-            OfferID: 8,
-            UserID: 110,
+            OfferID: 3,
+            UserID: 3,
             uploadTime: "2025-05-09T12:00:00"
         },
         {
@@ -65,8 +65,8 @@ export const BookOffersContextProvider = ({ children }) => {
             Pages: 1138,
             Cover: "Hardcover",
             Price: 14.55,
-            OfferID: 9,
-            UserID: 111,
+            OfferID: 4,
+            UserID: 3,
             uploadTime: "2025-05-09T12:00:00"
         },
         {
@@ -78,8 +78,8 @@ export const BookOffersContextProvider = ({ children }) => {
             Pages: 224,
             Cover: "Paperback",
             Price: 7.99,
-            OfferID: 10,
-            UserID: 112,
+            OfferID: 5,
+            UserID: 3,
             uploadTime: "2025-05-09T12:00:00"
         },
         {
@@ -91,8 +91,8 @@ export const BookOffersContextProvider = ({ children }) => {
             Pages: 422,
             Cover: "Hardcover",
             Price: 11.99,
-            OfferID: 11,
-            UserID: 113,
+            OfferID: 6,
+            UserID: 4,
             uploadTime: "2025-05-08T12:00:00"
         },
         {
@@ -104,8 +104,8 @@ export const BookOffersContextProvider = ({ children }) => {
             Pages: 535,
             Cover: "Paperback",
             Price: 9.75,
-            OfferID: 12,
-            UserID: 114,
+            OfferID: 7,
+            UserID: 4,
             uploadTime: "2025-05-08T12:00:00"
         }
     ]);

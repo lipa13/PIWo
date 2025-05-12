@@ -3,7 +3,7 @@ import FilterListItemInput from "./FilterListItemInput.jsx";
 import {useContext} from "react";
 import {BookOffersContext} from "../../../Contexts/BookOffersContext.jsx";
 
-export default function FilterList({ type }) {
+export default function FilterList({ type, filters, setFilters }) {
     const isCheckType = ["Author", "Category", "Cover"].includes(type);
 
     const { bookOffers } = useContext(BookOffersContext);
@@ -26,12 +26,20 @@ export default function FilterList({ type }) {
             <ul className="filter-list">
                 {isCheckType ? (
                     values.map((value, index) => (
-                        <FilterListItemCheck key={index} label={value} />
+                        <FilterListItemCheck
+                            key={index}
+                            label={value}
+                            type={type}
+                            filters={filters}
+                            setFilters={setFilters}
+                        />
                     ))
                 ) : (
                     <>
-                        <FilterListItemInput label="Min" />
-                        <FilterListItemInput label="Max" />
+                        <FilterListItemInput label="Min" type={type}
+                                             filters={filters} setFilters={setFilters} />
+                        <FilterListItemInput label="Max" type={type}
+                                             filters={filters} setFilters={setFilters} />
                     </>
                 )}
             </ul>

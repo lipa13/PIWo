@@ -10,6 +10,37 @@ export default function Shop(){
 
     const { bookOffers } = useContext(BookOffersContext);
 
+    const [filters, setFilters] = useState({
+        Author: [],
+        Category: [],
+        Cover: [],
+        PriceMin: null,
+        PriceMax: null,
+        PagesMin: null,
+        PagesMax: null,
+    });
+
+    const filteredBooks = bookOffers.filter((book) => {
+        // Author filter
+        if (filters.Author.length > 0 && !filters.Author.includes(book.Author)) return false;
+
+        // Category filter
+        if (filters.Category.length > 0 && !filters.Category.includes(book.Category)) return false;
+
+        // Cover filter
+        if (filters.Cover.length > 0 && !filters.Cover.includes(book.Cover)) return false;
+
+        // Price filter
+        if (filters.PriceMin !== null && book.Price < filters.PriceMin) return false;
+        if (filters.PriceMax !== null && book.Price > filters.PriceMax) return false;
+
+        // Pages filter
+        if (filters.PagesMin !== null && book.Pages < filters.PagesMin) return false;
+        return !(filters.PagesMax !== null && book.Pages > filters.PagesMax);
+
+
+    });
+
     const [activePanel, setActivePanel] = useState(null); // "filters", "sort" lub null
 
     const togglePanel = (panel) => {
@@ -29,15 +60,13 @@ export default function Shop(){
                 </button>
             </div>
 
-            {activePanel === "filters" && <Filters />}
+            {activePanel === "filters" && <Filters filters={filters} setFilters={setFilters} />}
             {activePanel === "sort"}
 
             <div className="shop-books">
-                <div className="shop-books">
-                    {bookOffers.map((book) => (
-                        <BookCard key={book.OfferID} book={book} />
-                    ))}
-                </div>
+                {filteredBooks.map((book) => (
+                    <BookCard key={book.OfferID} book={book} />
+                ))}
             </div>
         </main>
     );

@@ -3,7 +3,7 @@ import UpIcon from "../../../assets/chevron-up-outline.svg?react";
 import DownIcon from "../../../assets/chevron-down-outline.svg?react";
 import {useState} from "react";
 
-export default function Filters()
+export default function Filters({ filters, setFilters })
 {
     const [openDropdowns, setOpenDropdowns] = useState({
         Author: false,
@@ -36,7 +36,10 @@ export default function Filters()
                             )}
                         </button>
 
-                        {openDropdowns[type] && <FilterList type={type} />}
+                        {openDropdowns[type] && <FilterList
+                                                type={type}
+                                                filters={filters}
+                                                setFilters={setFilters} />}
                     </div>
                 ))}
             </div>
