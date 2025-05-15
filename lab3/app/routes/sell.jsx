@@ -2,6 +2,7 @@ import "../styles/sellStyle.css";
 import AutocompleteInput from "../Components/sellComponents/AutocompleteInput.jsx";
 import {useContext} from "react";
 import {BookOffersContext} from "../Contexts/BookOffersContext.jsx";
+import SingleSelectDropdown from "../Components/sellComponents/SingleSelectDropdown.jsx";
 
 export default function Sell(){
     const { bookOffers } = useContext(BookOffersContext);
@@ -16,10 +17,21 @@ export default function Sell(){
         a.localeCompare(b)
     );
 
+    const categories = ["Fantasy", "Horror", "Romance", "Action", "Thriller"];
+
+    const bookCondition = ["New", "Very good", "Good", "Acceptable"];
+
+    const covers = ["Hardcover", "Paperback"];
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert("Form Submitted!");
+    };
+
     return (
         <div className="sell-container">
             <h3>Sell your book now with this simple form!</h3>
-            <form className="sell-form">
+            <form className="sell-form" onSubmit={handleSubmit}>
                 <div className="sell-div">
                     <label className="sell-title">Title:</label>
                     <AutocompleteInput className="autocomplete-input" suggestions={titles} />
@@ -32,6 +44,11 @@ export default function Sell(){
 
                 <div className="sell-div">
                     <label className="sell-category">Category:</label>
+                    <SingleSelectDropdown
+                        label="Select Category"
+                        options={categories}
+                        onSelect={(value) => console.log("Selected:", value)}
+                    />
                 </div>
 
                 <div className="sell-div">
@@ -45,6 +62,11 @@ export default function Sell(){
 
                 <div className="sell-div">
                     <label className="sell-condition">Condition:</label>
+                    <SingleSelectDropdown
+                        label="Book condition"
+                        options={bookCondition}
+                        onSelect={(value) => console.log("Selected:", value)}
+                    />
                 </div>
 
                 <div className="sell-div">
@@ -54,6 +76,11 @@ export default function Sell(){
 
                 <div className="sell-div">
                     <label className="sell-cover">Cover:</label>
+                    <SingleSelectDropdown
+                        label="Book cover"
+                        options={covers}
+                        onSelect={(value) => console.log("Selected:", value)}
+                    />
                 </div>
 
                 <div className="sell-div">

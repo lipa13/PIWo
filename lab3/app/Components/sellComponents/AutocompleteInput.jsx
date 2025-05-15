@@ -30,7 +30,7 @@ export default function AutocompleteInput({ suggestions }) {
 
     return (
         <div className="auto-wrapper">
-            <input className="input-sell"
+            <input className={`input-sell`}
                    type="text"
                    value={input}
                    onChange={handleChange}
