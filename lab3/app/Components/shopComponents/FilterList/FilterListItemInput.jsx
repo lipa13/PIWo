@@ -4,7 +4,6 @@ export default function FilterListItemInput({ label, type, filters, setFilters }
 
     const handleChange = (e) => {
         const value = e.target.value ? parseFloat(e.target.value) : null;
-
         setFilters(prev => ({
             ...prev,
             [fieldKey]: value
@@ -19,6 +18,7 @@ export default function FilterListItemInput({ label, type, filters, setFilters }
                     className="filter-list-item-number-input"
                     type="number"
                     onChange={handleChange}
+                    value={filters[fieldKey] ?? ""}
                 />
             </div>
         </li>

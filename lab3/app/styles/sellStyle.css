@@ -23,12 +23,14 @@
     display: grid;
     grid-template-columns: 100px 1fr;
     font-size: 16px;
+    align-items: start;
 }
 
 .input-sell
 {
+    width: 100%;
     font-size: 14px;
-    padding: 3px 8px;
+    padding: 2px 6px;
 }
 
 textarea
@@ -36,4 +38,35 @@ textarea
     resize: none;
     overflow: auto;
     caret-color: auto;
+}
+
+.auto-wrapper
+{
+    position: relative;
+    width: 100%;
+}
+
+.auto-list
+{
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    margin: 0;
+    list-style: none;
+    z-index: 10;
+    width: 100%;
+    max-height: 55px;
+    overflow-y: auto;
+}
+
+.auto-list-item
+{
+    font-size: 13px;
+    padding: 2px 6px;
+    cursor: pointer;
+}
+
+.auto-list-item:hover
+{
+    color: #287258;
 }

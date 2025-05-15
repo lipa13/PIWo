@@ -306,3 +306,8 @@
 {
     width: 16px;
 }
+
+.filter-btn.active {
+    color: #287258;
+    font-weight: bold;
+}

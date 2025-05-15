@@ -5,6 +5,7 @@ import Filters from "../components/shopComponents/Filters";
 import BookCard from "../Components/shopComponents/BookCard";
 import {useContext, useState} from "react";
 import {BookOffersContext} from "../Contexts/BookOffersContext.jsx";
+import SortButtons from "../Components/shopComponents/SortButtons.jsx";
 
 export default function Shop(){
 
@@ -41,6 +42,17 @@ export default function Shop(){
 
     });
 
+    const [sort, setSort] = useState(null);
+
+    const sortedBooks = [...filteredBooks];
+
+    if (sort === "Price ↑") sortedBooks.sort((a, b) => a.Price - b.Price);
+    if (sort === "Price ↓") sortedBooks.sort((a, b) => b.Price - a.Price);
+    if (sort === "Title ↑") sortedBooks.sort((a, b) => a.Title.localeCompare(b.Title));
+    if (sort === "Title ↓") sortedBooks.sort((a, b) => b.Title.localeCompare(a.Title));
+    if (sort === "Pages ↑") sortedBooks.sort((a, b) => a.Pages - b.Pages);
+    if (sort === "Pages ↓") sortedBooks.sort((a, b) => b.Pages - a.Pages);
+
     const [activePanel, setActivePanel] = useState(null); // "filters", "sort" lub null
 
     const togglePanel = (panel) => {
@@ -61,10 +73,10 @@ export default function Shop(){
             </div>
 
             {activePanel === "filters" && <Filters filters={filters} setFilters={setFilters} />}
-            {activePanel === "sort"}
+            {activePanel === "sort" && <SortButtons sort={sort} setSort={setSort} />}
 
             <div className="shop-books">
-                {filteredBooks.map((book) => (
+                {sortedBooks.map((book) => (
                     <BookCard key={book.OfferID} book={book} />
                 ))}
             </div>

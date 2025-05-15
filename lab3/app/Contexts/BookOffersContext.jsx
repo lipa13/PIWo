@@ -107,6 +107,32 @@ export const BookOffersContextProvider = ({ children }) => {
             OfferID: 7,
             UserID: 4,
             uploadTime: "2025-05-08T12:00:00"
+        },
+        {
+            Title: "The Silent Patient",
+            Author: "Alex Michaelides",
+            Category: "Thriller",
+            Description: "A psychotherapist becomes obsessed with a silent patient accused of murdering her husband.",
+            Condition: "New",
+            Pages: 336,
+            Cover: "Paperback",
+            Price: 14.29,
+            OfferID: 10,
+            UserID: 110,
+            uploadTime: "2025-05-08T10:00:00"
+        },
+        {
+            Title: "Mission: Impossible – Rogue Nation",
+            Author: "David McDaniel",
+            Category: "Action",
+            Description: "Ethan Hunt and his team take on a network of rogue operatives bent on destroying the IMF.",
+            Condition: "Used",
+            Pages: 295,
+            Cover: "Paperback",
+            Price: 7.99,
+            OfferID: 13,
+            UserID: 113,
+            uploadTime: "2025-05-09T16:30:00"
         }
     ]);
 
