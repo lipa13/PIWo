@@ -1,19 +1,14 @@
-import "../styles/sellStyle.css";
-import AutocompleteInput from "../Components/sellComponents/AutocompleteInput.jsx";
-import {useContext, useState} from "react";
-import {BookOffersContext} from "../Contexts/BookOffersContext.jsx";
-import SingleSelectDropdown from "../Components/sellComponents/SingleSelectDropdown.jsx";
+import { useState, useContext } from "react";
+import "../styles/sellStyle.css"
+import AutocompleteInput from "../components/sellComponents/AutocompleteInput";
+import SingleSelectDropdown from "../components/sellComponents/SingleSelectDropdown";
+import { BookOffersContext } from "../Contexts/BookOffersContext";
+import { db } from "../firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function Sell() {
-    const { bookOffers, setBookOffers } = useContext(BookOffersContext);
+    const { bookOffers } = useContext(BookOffersContext);
 
-    const titles = [...new Set(bookOffers.map(book => book.Title))].sort();
-    const authors = [...new Set(bookOffers.map(book => book.Author))].sort();
-    const categories = ["Fantasy", "Horror", "Romance", "Action", "Thriller"];
-    const bookCondition = ["New", "Very good", "Good", "Acceptable"];
-    const covers = ["Hardcover", "Paperback"];
-
-    // Lokalny stan formularza
     const [formData, setFormData] = useState({
         Title: "",
         Author: "",
@@ -25,105 +20,110 @@ export default function Sell() {
         Price: "",
     });
 
-    // Obsługa inputów tekstowych i liczbowych
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+        setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    // Obsługa dropdownów
-    const handleSelect = (name, value) => {
-        setFormData(prev => ({ ...prev, [name]: value }));
+    const handleDropdownChange = (name, value) => {
+        setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         const newBook = {
             ...formData,
             Pages: parseInt(formData.Pages),
             Price: parseFloat(formData.Price),
-            OfferID: bookOffers.length, // lub inny mechanizm ID
-            UserID: 999, // tymczasowe ID użytkownika
+            OfferID: Date.now(),
+            UserID: 999,
             uploadTime: new Date().toISOString(),
         };
 
-        console.log("Dodawana książka:", formData);
+        try {
+            await addDoc(collection(db, "bookOffers"), newBook);
+            alert("Book added successfully!");
 
-        setBookOffers(prev => [...prev, newBook]);
-
-        // (opcjonalnie) resetuj formularz
-        setFormData({
-            Title: "",
-            Author: "",
-            Category: "",
-            Description: "",
-            Condition: "",
-            Pages: "",
-            Cover: "",
-            Price: "",
-        });
-
-        alert("Book added successfully!");
+            setFormData({
+                Title: "",
+                Author: "",
+                Category: "",
+                Description: "",
+                Condition: "",
+                Pages: "",
+                Cover: "",
+                Price: "",
+            });
+        } catch (error) {
+            console.error("Error adding document: ", error);
+            alert("Failed to add book.");
+        }
     };
+
+    const authorOptions = [...new Set(bookOffers.map(book => book.Author))].sort();
+    const titleOptions = [...new Set(bookOffers.map(book => book.Title))].sort();
+
+    const categoryOptions = ["Fantasy", "Thriller", "Horror", "Romance", "Action"];
+    const conditionOptions = ["New", "Very Good", "Good", "Acceptable"];
+    const coverOptions = ["Paperback", "Hardcover"];
 
     return (
         <div className="sell-container">
-            <h3>Sell your book now with this simple form!</h3>
-            <form className="sell-form" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="sell-form">
                 <div className="sell-div">
-                    <label>Title:</label>
+                    <label>Title</label>
                     <AutocompleteInput
-                        className="autocomplete-input"
-                        suggestions={titles}
+                        suggestions={titleOptions}
+                        name="Title"
                         value={formData.Title}
-                        onChange={(value) => setFormData(prev => ({ ...prev, Title: value }))}
+                        onChange={(value) => handleDropdownChange("Title", value)}
                     />
                 </div>
 
                 <div className="sell-div">
-                    <label>Author:</label>
+                    <label>Author</label>
                     <AutocompleteInput
-                        className="autocomplete-input"
-                        suggestions={authors}
+                        suggestions={authorOptions}
+                        name="Author"
                         value={formData.Author}
-                        onChange={(value) => setFormData(prev => ({ ...prev, Author: value }))}
+                        onChange={(value) => handleDropdownChange("Author", value)}
                     />
                 </div>
 
                 <div className="sell-div">
-                    <label>Category:</label>
+                    <label>Category</label>
                     <SingleSelectDropdown
                         label="Select Category"
-                        options={categories}
-                        onSelect={(value) => handleSelect("Category", value)}
+                        options={categoryOptions}
+                        onSelect={(value) => handleDropdownChange("Category", value)}
                     />
                 </div>
 
                 <div className="sell-div">
-                    <label>Description:</label>
+                    <label>Description</label>
                     <textarea
-                        className="input-sell input-sell-description"
-                        rows={4}
+                        className="input-sell"
                         name="Description"
                         value={formData.Description}
                         onChange={handleChange}
+                        rows={3}
                     />
                 </div>
 
                 <div className="sell-div">
-                    <label>Condition:</label>
+                    <label>Condition</label>
                     <SingleSelectDropdown
-                        label="Book condition"
-                        options={bookCondition}
-                        onSelect={(value) => handleSelect("Condition", value)}
+                        label="Select Condition"
+                        options={conditionOptions}
+                        onSelect={(value) => handleDropdownChange("Condition", value)}
                     />
                 </div>
 
                 <div className="sell-div">
-                    <label>Pages:</label>
+                    <label>Pages</label>
                     <input
-                        className="input-sell input-sell-pages"
+                        className="input-sell"
                         type="number"
                         name="Pages"
                         value={formData.Pages}
@@ -132,27 +132,27 @@ export default function Sell() {
                 </div>
 
                 <div className="sell-div">
-                    <label>Cover:</label>
+                    <label>Cover</label>
                     <SingleSelectDropdown
-                        label="Book cover"
-                        options={covers}
-                        onSelect={(value) => handleSelect("Cover", value)}
+                        label="Select Cover"
+                        options={coverOptions}
+                        onSelect={(value) => handleDropdownChange("Cover", value)}
                     />
                 </div>
 
                 <div className="sell-div">
-                    <label>Price:</label>
+                    <label>Price ($)</label>
                     <input
-                        className="input-sell input-sell-price"
+                        className="input-sell"
                         type="number"
-                        step="0.01"
                         name="Price"
                         value={formData.Price}
                         onChange={handleChange}
+                        step="0.01"
                     />
                 </div>
 
-                <button className="btn sell" type="submit">Submit</button>
+                <button type="submit" className="btn">Submit</button>
             </form>
         </div>
     );
