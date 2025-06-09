@@ -5,9 +5,12 @@ import SingleSelectDropdown from "../components/sellComponents/SingleSelectDropd
 import { BookOffersContext } from "../Contexts/BookOffersContext";
 import { db } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { useUser } from "../Contexts/UserContext";
 
 export default function Sell() {
     const { bookOffers } = useContext(BookOffersContext);
+
+    const { user } = useUser();
 
     const [formData, setFormData] = useState({
         Title: "",
@@ -32,19 +35,23 @@ export default function Sell() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if (!user) {
+            alert("You must be logged in to submit a book offer!");
+            return;
+        }
+
         const newBook = {
             ...formData,
             Pages: parseInt(formData.Pages),
             Price: parseFloat(formData.Price),
             OfferID: Date.now(),
-            UserID: 999,
+            UserID: user.uid,
             uploadTime: new Date().toISOString(),
         };
 
         try {
             await addDoc(collection(db, "bookOffers"), newBook);
             alert("Book added successfully!");
-
             setFormData({
                 Title: "",
                 Author: "",

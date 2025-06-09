@@ -5,11 +5,12 @@ import AccountIcon from "../../../assets/person-outline.svg?react";
 import {useEffect, useRef, useState} from "react";
 import { useUser } from "../../Contexts/UserContext";
 
-import {auth, googleProvider} from "../../firebase";
+import {auth, googleProvider, db} from "../../firebase";
+import { doc, setDoc } from "firebase/firestore";
 import {signInWithPopup, signOut} from "firebase/auth";
 
 export default function NavBar() {
-    const { user } = useUser();
+    const { user, setUser } = useUser();
 
     const [showDropdown, setShowDropdown] = useState(false);
 
@@ -29,9 +30,20 @@ export default function NavBar() {
         try {
             const result = await signInWithPopup(auth, googleProvider);
             setUser(result.user); // zapisz dane użytkownika do kontekstu
+            await saveUserToFirestore(result.user);
         } catch (error) {
             console.error("Login failed:", error);
         }
+    };
+
+    const saveUserToFirestore = async (user) => {
+        const userRef = doc(db, "users", user.uid);
+
+        await setDoc(userRef, {
+            displayName: user.displayName,
+            email: user.email,
+            createdAt: new Date().toISOString(),
+        }, { merge: true });
     };
 
     return (
@@ -60,7 +72,7 @@ export default function NavBar() {
                     <div className="account-dropdown">
                         {user ? (
                             <>
-                                <div className="welcome-text">Witaj, {user.displayName || "Użytkowniku"}</div>
+                                <div className="welcome-text">Hi, {user.displayName || "Użytkowniku"}</div>
                                 <button className="login-btn" onClick={handleLogout}>
                                     Wyloguj
                                 </button>
