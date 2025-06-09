@@ -35,6 +35,7 @@
 
 .user-controls
 {
+    position: relative;
     display: flex;
     gap: 10px;
 }
@@ -76,4 +77,32 @@
 .nav-hover:active
 {
     color: #5ba58b;
+}
+
+.account-dropdown{
+    position: absolute;
+    right: 0;
+    top: 35px;
+    background: white;
+    border: 2px solid #e9ecef;
+    padding: 6px 10px;
+    z-index: 10;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn {
+    background-color: #287258;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #212529;
+    width: 150px;
+}
+
+.login-btn:hover {
+    background-color: #1f5e47;
+    color: white;
 }
