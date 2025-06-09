@@ -28,7 +28,9 @@ export default function BookCard({ book }){
     const calcUploadTime = getDaysSinceUpload(uploadTime);
 
     return (
-        <div className="bookcard">
+        <div className="bookcard" data-category={book.Category}
+             data-cover={book.Cover} data-author={book.Author}
+             data-price={book.Price}>
             <div className="bookcard-img">
                 Photos
                 <div className="like-btn-container">

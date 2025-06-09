@@ -19,6 +19,7 @@ export default function FilterListItemInput({ label, type, filters, setFilters }
                     type="number"
                     onChange={handleChange}
                     value={filters[fieldKey] ?? ""}
+                    data-testid={label}
                 />
             </div>
         </li>
