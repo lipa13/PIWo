@@ -72,7 +72,8 @@ export default function NavBar() {
                     <div className="account-dropdown">
                         {user ? (
                             <>
-                                <div className="welcome-text">Hi, {user.displayName || "Użytkowniku"}</div>
+                                <div className="welcome-text">Hi, {user.displayName || "User"}</div>
+                                <NavLink className="my-books-btn" to="account"> My books</NavLink>
                                 <button className="login-btn" onClick={handleLogout}>
                                     Wyloguj
                                 </button>

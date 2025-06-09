@@ -1,0 +1,89 @@
+.account-container {
+    padding: 30px;
+}
+
+.add-offer-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #287258;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.add-offer-link:hover {
+    text-decoration: underline;
+}
+
+.offers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.offer-card {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #e03131;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c92a2a;
+}
+
+.editing-container
+{
+    display: flex;
+    gap: 15px;
+}
+
+.edit-btn-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.edit-btn, .save-btn, .cancel-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.edit-btn {
+    background-color: #339af0;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #1c7ed6;
+}
+
+.save-btn {
+    background-color: #37b24d;
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #2f9e44;
+}
+
+.cancel-btn {
+    background-color: #adb5bd;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #868e96;
+}

@@ -114,6 +114,21 @@
 }
 
 .login-btn:hover {
-    background-color: #1f5e47;
+    background-color: #edf5d7;
+}
+
+.my-books-btn {
+    display: block;
+    margin: 6px 0;
+    padding: 6px 12px;
+    font-size: 14px;
     color: white;
+    background-color: #287258;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.my-books-btn:hover {
+    background-color: #1f5e47;
 }
