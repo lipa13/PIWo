@@ -6,17 +6,23 @@ import {useEffect, useRef, useState} from "react";
 import { useUser } from "../../Contexts/UserContext";
 
 import {auth, googleProvider} from "../../firebase";
-import {signInWithPopup} from "firebase/auth";
+import {signInWithPopup, signOut} from "firebase/auth";
 
 export default function NavBar() {
-    const userContext = useUser();
-    const user = userContext?.user;
-    const setUser = userContext?.setUser;
+    const { user } = useUser();
 
     const [showDropdown, setShowDropdown] = useState(false);
 
     const toggleDropdown = () => {
         setShowDropdown(prev => !prev);
+    };
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+        } catch (error) {
+            console.error("Logout failed:", error);
+        }
     };
 
     const handleGoogleLogin = async () => {
@@ -51,8 +57,19 @@ export default function NavBar() {
                     </button>
                 </NavLink>
                 {showDropdown && (
-                    <div className="account-dropdown" onClick={handleGoogleLogin}>
-                        <button className="login-btn">Log in with Google</button>
+                    <div className="account-dropdown">
+                        {user ? (
+                            <>
+                                <div className="welcome-text">Witaj, {user.displayName || "Użytkowniku"}</div>
+                                <button className="login-btn" onClick={handleLogout}>
+                                    Wyloguj
+                                </button>
+                            </>
+                        ) : (
+                            <button className="login-btn" onClick={handleGoogleLogin}>
+                                Log in with Google
+                            </button>
+                        )}
                     </div>
                 )}
             </div>
